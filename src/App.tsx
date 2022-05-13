@@ -56,7 +56,7 @@ class App extends React.Component<{}, State> {
   getRandomQuestion = () => {
     const { questions } = this.state;
     const randomIndex = getRandomIntInclusive(1, questions.length);
-    const randomQuestion = this.state.questions.find((item, i) => {
+    const randomQuestion = questions.find((item, i) => {
       if (i === randomIndex) {
         return item[i];        
       }
