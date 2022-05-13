@@ -70,17 +70,19 @@ class App extends React.Component<{}, State> {
   }
 
   start = () => {
-    this.setState(state => {
-      this.setState((state) => ({
-        ...state,
-        isShow: true,
-      }));
-    })
+    this.setState((state) => ({
+      ...state,
+      isShow: true,
+    }));
   }
 
 
   render() {
     const { questions, currentQuestion, isShow } = this.state;
+    const indexOfCurrentQuestion = questions
+      .findIndex(item => item === currentQuestion) 
+      + 1 
+      + '. ';
 
 
     return (
@@ -105,16 +107,14 @@ class App extends React.Component<{}, State> {
               </button>
 
               <h1 className="Question__block">
-                <span className="Question__number">{
-                  questions
-                    .findIndex(item => item === currentQuestion) 
-                    + 1 
-                    + '. '
-                  }</span>{currentQuestion}
+                <span className="Question__number">
+                  {indexOfCurrentQuestion}
+                  </span>
+                  {currentQuestion}
               </h1>              
             </div>
           )
-        }
+      }
       </div> 
   );
   }
