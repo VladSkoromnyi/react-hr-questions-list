@@ -1,38 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
 .App {
-  text-align: center;
+  height: max-content;
+	text-align: center;
+  width: 600px;
+  padding: 20px;
+  margin: 20px auto 0;
+  box-shadow: 1px 0 5px 1px #bfbfbf;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Question__number {
+	color: rgb(158, 39, 2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button {
+  outline: none;
+  padding: 10px 15px;
+  margin: 0 15px;
+  border: 1px solid rgb(158, 39, 2);
+  border-radius: 20px;
+  background-color: rgb(158, 39, 2);
+  color: #fff;
+  cursor: pointer;
+
+  transition: color, background-color, border-color, 0.3s ease;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button:hover {
+	background-color: #fff;
+	color: rgb(158, 39, 2);
+	border-color: rgb(158, 39, 2);
 }
 
-.App-link {
-  color: #61dafb;
+button:active {
+  background-color: rgb(158, 39, 2);
+	color: #fff;
+	border-color: rgb(158, 39, 2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.disabled {
+	display: none;
 }
